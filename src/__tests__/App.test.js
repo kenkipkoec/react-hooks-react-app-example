@@ -7,9 +7,9 @@ beforeEach(() => {
   render(<App />);
 });
 
-test('should include "Now" in the header instead of a time', () => {
+test("Now", () => {
   expect(
-    screen.queryByText(format(new Date(), "MMMM do yyyy, h:mm:ss a"))
+    screen.queryByText(format(new Date(), "yyyy-MM-dd'T'HH:mm:ss"))
   ).not.toBeInTheDocument();
   expect(screen.queryByText(/Now/g)).toBeInTheDocument();
 });
@@ -31,7 +31,7 @@ test("should include the <TestComponent />", () => {
 //     expect(wrapper.text()).to.include('<ExampleComponent />')
 //   });
 
-//   it('should include the TestComponent', () => {
+//   it('should include the TestComponent', () => { 
 //     expect(wrapper.text()).to.include('<TestComponent />')
 //   });
 // });
